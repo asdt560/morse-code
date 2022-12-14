@@ -37,3 +37,11 @@ def decode_word(word)
   chars.each { |char| result.concat(decode_char(char)) }
   return result
 end
+
+def decode(message)
+  words = message.split('   ')
+  result = ''
+  words.each { |word| result += "#{decode_word(word)} "}
+  return result.gsub(/\s+$/,'')
+end
+
