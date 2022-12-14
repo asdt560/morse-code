@@ -30,3 +30,10 @@ def decode_char(char)
   }
   return code.key(char)
 end
+
+def decode_word(word)
+  chars = word.split(' ')
+  result = ''
+  chars.each { |char| result.concat(decode_char(char)) }
+  return result
+end
